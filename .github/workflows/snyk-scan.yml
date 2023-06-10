@@ -9,4 +9,4 @@ jobs:
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        image: M4ximito/zadanie2-web
+        image: m4ximito/zadanie2
