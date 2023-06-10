@@ -31,7 +31,7 @@ jobs:
         file: ./Dockerfile
         platforms: linux/amd64
         push: true
-        tags: username/repository:latest-x86_64
+        tags: m4ximito/zadanie2:latest-x86_64
 
     - name: Build and push arm64 image
       uses: docker/build-push-action@v2
@@ -40,4 +40,4 @@ jobs:
         file: ./Dockerfile
         platforms: linux/arm64
         push: true
-        tags: username/repository:latest-arm64
+        tags: m4ximito/zadanie2:latest-arm64
