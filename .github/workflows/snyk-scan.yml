@@ -35,7 +35,7 @@ jobs:
         tags: m4ximito/zadanie2:latest-x86_64
 
     - name: Install Snyk CLI
-      run: npm install -g snyk
+      run: npm install snyk
 
     - name: Scan Docker image with Snyk
       run: snyk test --all-projects --docker zadanie2-web:latest --json > snyk-results.json
