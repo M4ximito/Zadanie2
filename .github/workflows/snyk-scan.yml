@@ -34,6 +34,7 @@ jobs:
     - name: Scan Docker image with Snyk
       run: snyk test --all-projects --docker zadanie2-web:latest --json > snyk-results.json
 
+      
     - name: Publish Snyk results as artifact
       uses: actions/upload-artifact@v2
       with:
