@@ -7,6 +7,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      cache_from:
+        - m4ximito/zadanie2:latest-x86_64
     ports:
       - '3000:3000'
     volumes:
@@ -20,8 +22,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+      cache_from:
+        - m4ximito/zadanie2:latest-x86_64
     volumes:
       - /app/node_modules
       - .:/app
     command: ["npm", "run", "test"]
-
