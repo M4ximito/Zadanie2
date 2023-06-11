@@ -6,7 +6,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       cache_from:
         - m4ximito/zadanie2:latest-x86_64
     ports:
@@ -21,7 +21,7 @@ services:
       - CHOKIDAR_USEPOLLING=true
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
       cache_from:
         - m4ximito/zadanie2:latest-x86_64
     volumes:
