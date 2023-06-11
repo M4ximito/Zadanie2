@@ -32,10 +32,10 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/M4ximito/Zadanie2:${{ github.run_number }}-x86_64
+          tags: ghcr.io/m4ximito/zadanie2:${{ github.run_number }}-x86_64
 
       - name: Test image for CVEs
-        run: trivy image ghcr.io/M4ximito/Zadanie2:${{ github.run_number }}-x86_64
+        run: trivy image ghcr.io/m4ximito/zadanie2:${{ github.run_number }}-x86_64
 
       - name: Build and push arm64 image
         id: build_arm64
@@ -43,9 +43,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/M4ximito/Zadanie2:${{ github.run_number }}-arm64
+          tags: ghcr.io/m4ximito/zadanie2:${{ github.run_number }}-arm64
           builder: multi-platform
-
-      - name: Get SemVer version
-        id: semver
-        run: echo "::set-output name=version::$(date +'%Y.%-m.%-d')-$(echo ${{ github.run_number }} | cut -c1-7)"
