@@ -23,7 +23,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
+          username: M4ximito
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Build and push x86_64 image
