@@ -16,7 +16,7 @@ jobs:
         echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Scan Docker image with Snyk
-      run: npx snyk test --all-projects --docker ghcr.io/M4ximito/zadanie2:latest-x86_64 --json > snyk-results.json
+      run: npx snyk test --all-projects --docker ghcr.io/M4ximito/zadanie2:latest --json > snyk-results.json
 
     - name: Publish Snyk results as artifact
       uses: actions/upload-artifact@v2
