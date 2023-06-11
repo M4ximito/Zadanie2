@@ -45,3 +45,15 @@ jobs:
           push: true
           tags: ghcr.io/m4ximito/zadanie2:${{ github.run_number }}-arm64
           builder: multi-platform
+
+      - name: Install Snyk CLI
+        run: npm install --global snyk
+
+      - name: Test Docker image with Snyk
+        run: snyk test --all-projects --docker ghcr.io/m4ximito/zadanie2:${{ github.run_number }}-x86_64 --json > snyk-results.json
+
+      - name: Publish Snyk results as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: snyk-results
+          path: snyk-results.json
